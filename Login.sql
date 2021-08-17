@@ -1,2 +1,0 @@
-SELECT FullName,UserName,Email,PasswordHash
-FROM AspNetUsers
