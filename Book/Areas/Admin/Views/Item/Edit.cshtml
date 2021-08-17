@@ -1,0 +1,57 @@
+﻿@model TbItem
+<section class="content">
+    <div class="container-fluid">
+        <div style="margin-left:-250px;margin-right:250px" class="row">
+            <div class="col-md-8">
+                <div class="card card-primary">
+                    <div class="card-header">
+                    </div>
+                    <form method="post" enctype="multipart/form-data" role="form" asp-controller="Item" asp-action="Save">
+                        <div style="text-align:left" class="card-body">
+                            <div class="form-group">
+                                <label>Item Name</label>
+                                <input required asp-for="ItemName" type="text" class="form-control">
+                                <span class="label danger" asp-validation-for="ItemName"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Purches Price</label>
+                                <input required asp-for="PurchasePrice" type="text" class="form-control">
+                                <span class="label danger" asp-validation-for="PurchasePrice"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Sales Price</label>
+                                <input required asp-for="SalesPrice" type="number" class="form-control">
+                                <span class="label danger" asp-validation-for="SalesPrice"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Image</label>
+                                <input type="file" name="Files" class="form-control">
+                            </div>
+                            <div class="form-group" data-select2-id="13">
+                                <label>Category</label>
+                                <input type="hidden" asp-for="ItemId" />
+                                <select required asp-for="CategoryId" class="form-control select2 select2-hidden-accessible" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true" asp-items="@(new SelectList(ViewBag.Category,"CategoryId","CategoryName"))">
+                                </select>
+                                <span class="select2 select2-container select2-container--bootstrap4 select2-container--below select2-container--focus" dir="ltr" data-select2-id="2" style="width: 100%;">
+                                    <span class="selection">
+                                        <span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-6bad-container">
+                                            <span class="select2-selection__arrow" role="presentation">
+                                                <b role="presentation"></b>
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <span class="dropdown-wrapper" aria-hidden="true">
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-block btn-primary btn-lg">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

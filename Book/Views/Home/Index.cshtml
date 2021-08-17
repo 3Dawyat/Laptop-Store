@@ -1,0 +1,84 @@
+﻿@model HomeModel
+@inject SignInManager<AplicationUser> signIn
+<div id="top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="left-content">
+                    <div class="inner-content">
+                        <h4>Laptop Store</h4>
+                        <h6>All about the world of laptops</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="main-banner header-text">
+                    <div class="Modern-Slider">
+                        <div class="item">
+                            <div class="img-fill">
+                                <img src="~/assets/images/desk-electronics-email-indoors.jpg" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-fill">
+                                <img src="~/assets/images/d6Fwc8xZMLv9v3r5E6vU8A.jpg" />
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="img-fill">
+                                <img src="~/assets/images/huawei_laptop_01_preview_thumb800.jpg" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="section" id="chefs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-4 text-center">
+                <div class="section-heading">
+                    <h6>Our Items</h6>
+                    <h2>We offer the best ingredients for you</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.lstAllItem)
+            {
+                <partial name="_Item" model="item" />
+            }
+        </div>
+    </div>
+</section>
+@*@if (signIn.IsSignedIn(User))
+{*@
+    <section class="section" id="offers">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="row" id="tabs">
+                        <div class="col-lg-12">
+                            <div class="heading-tabs">
+                                <div class="row">
+                                    <div class="col-lg-12 offset-lg-0">
+                                        <ul id="Category">
+                                        </ul>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <section id="secItems" class='tabs-content col-lg-12'>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@*}*@
+

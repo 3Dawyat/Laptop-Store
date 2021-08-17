@@ -1,0 +1,77 @@
+﻿@model ShopingCard
+<section class="section">
+    <div class="shopping-cart section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Shopping Card C# call OrderController -->
+                    <table class="table shopping-summery">
+                        <thead>
+                            <tr class="main-hading">
+                                <th>PRODUCT</th>
+                                <th>NAME</th>
+                                <th class="text-center">UNIT PRICE</th>
+                                <th class="text-center">QUANTITY</th>
+                                <th class="text-center">TOTAL</th>
+                                <th class="text-center"><i class="ti-trash remove-icon"></i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.listItem)
+                            {
+                                <tr>
+                                    <td class="image" data-title="No"><a href="/Items/Details/@item.ItemId"><img src="@string.Format("/Uplude/{0}",item.ImageName)" alt="#"></a></td>
+                                    <td class="product-des" data-title="Description">
+                                        <p class="product-name"><a href="#">@item.ItemName</a></p>
+                                        <p class="product-des">Maboriosam in a tonto nesciung eget  distingy magndapibus.</p>
+                                    </td>
+                                    <td class="price" data-title="Price"><span>@Decimal.Truncate(item.Price)</span></td>
+                                    <td class="qty" data-title="Qty">
+                                        <div class="input-group">
+                                            <input type="number" class="qtyItem" data-price="@item.Price" onkeyup="ChangeQty(this);" value="@item.Qty">
+                                        </div>
+                                    </td>
+                                    <td class="total-amount" data-title="Total"><span>@(item.Qty*item.Price)</span></td>
+                                    <td class="action" data-title="Remove"><a href="/Order/RemoveItem/@item.ItemId">X</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div class="total-amount">
+                        <div class="row">
+                            <div class="col-lg-8 col-md-5 col-12">
+                                <div class="left">
+                                    <div class="coupon">
+                                        <form action="#" target="_blank">
+                                            <input name="Coupon" placeholder="Enter Your Coupon">
+                                            <button class="btn">Apply</button>
+                                        </form>
+                                    </div>
+                                    <div class="checkbox">
+                                        <label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox"> Shipping (+10$)</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-7 col-12">
+                                <div class="right">
+                                    <ul>
+                                        <li>Subtotal  L.E </li>
+                                        <li id="total">@Decimal.Truncate(@Model.Total)</li>
+                                    </ul>
+                                    <div class="button5">
+                                        <a href="/Users/Login" class="btn">Continue shopping</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

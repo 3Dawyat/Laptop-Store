@@ -1,0 +1,38 @@
+[
+  //{
+  //  "outputFileName": "wwwroot/css/site.min.css",
+  //  "inputFiles": [
+  //    "https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap",
+  //    "https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap",
+  //    "wwwroot/assets/css/bootstrap.min.css",
+  //    "wwwroot/assets/css/font-awesome.css",
+  //    "wwwroot/assets/css/templatemo-klassy-cafe.css",
+  //    "wwwroot/assets/css/owl-carousel.css",
+  //    "wwwroot/assets/css/lightbox.css"
+  //  ]
+  //},
+  {
+    "outputFileName": "wwwroot/js/site.min.js",
+    "inputFiles": [
+      "wwwroot/assets/js/jquery-2.1.0.min.js",
+      "wwwroot/assets/js/popper.js",
+      "wwwroot/assets/js/bootstrap.min.js",
+      "wwwroot/assets/js/owl-carousel.js",
+      "wwwroot/assets/js/accordions.js",
+      "wwwroot/assets/js/datepicker.js",
+      "wwwroot/assets/js/scrollreveal.min.js",
+      "wwwroot/assets/js/waypoints.min.js",
+      "wwwroot/assets/js/jquery.counterup.min.js",
+      "wwwroot/assets/js/imgfix.min.js",
+      "wwwroot/assets/js/slick.js",
+      "wwwroot/assets/js/lightbox.js",
+      "wwwroot/assets/js/isotope.js",
+      "wwwroot/assets/js/custom.js"
+    ],
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    "sourceMap": false
+  }
+]

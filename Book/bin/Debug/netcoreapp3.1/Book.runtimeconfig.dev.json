@@ -1,0 +1,11 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\3Dawyat\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\3Dawyat\\.nuget\\packages",
+      "E:\\New folder (2)\\Components\\Offline Packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+      "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet"
+    ]
+  }
+}

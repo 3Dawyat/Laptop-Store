@@ -1,0 +1,98 @@
+﻿@model ItemDetails
+@section StyleDetails
+{
+    <link rel="stylesheet" href="~/Admin/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="~/Admin/dist/css/adminlte.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+}
+@section ScriptDitails
+{
+    <script src="~/Admin/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Admin/dist/js/adminlte.min.js"></script>
+    <script src="~/Admin/dist/js/demo.js"></script>
+}
+<section class="section" id="about">
+    <div class="card card-solid">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <h3 class="d-inline-block d-sm-none">LOWA Men’s Renegade GTX Mid Hiking Boots Review</h3>
+                    <div class="col-12">
+                        <img src="@string.Format("/Uplude/{0}",Model.Item.ImageName)" alt="Product Image">
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <h3 class="my-3">@Model.Item.ItemName</h3>
+                    <div class="bg-gray py-2 px-3 mt-4">
+                        <h2 class="mb-0">@Decimal.Truncate(Model.Item.SalesPrice) L.E </h2>
+                    </div>
+                    <div class="mt-4">
+                        <a href="" data-name="@Model.Item.ItemName" data-price="@Model.Item.SalesPrice" class="add-to-cart btn btn-primary btn-lg btn-flat"><i class="fas fa-cart-plus fa-lg mr-2"></i>Add to card </a>
+                    </div>
+                    <div class="mt-4 product-share">
+                        <a href="#" class="text-gray">
+                            <i class="fab fa-facebook-square fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-gray">
+                            <i class="fab fa-twitter-square fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-gray">
+                            <i class="fas fa-envelope-square fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-gray">
+                            <i class="fas fa-rss-square fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <nav class="w-100">
+                    <div class="nav nav-tabs" id="product-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="product-desc-tab" data-toggle="tab" href="#product-desc" role="tab" aria-controls="product-desc" aria-selected="true">Description</a>
+                    </div>
+                </nav>
+                <div class="tab-content p-3" id="nav-tabContent">
+                    <div class="value" itemprop="description"><p><strong>Processor:</strong> 10th Generation Intel®Core™ i7 -10750H(12MB Cache, up to 5.0 GHz, 6 cores)<br><strong>RAM:</strong>16GB<br><strong>Hard Disk:</strong> 512 SSD<br><strong>Graphics Card:</strong>NVIDIA® GeForce® GTX 1650 4 GB<br><strong>Color:</strong> Black</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section" id="chefs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 offset-lg-12 text-center">
+                <div class="section-heading">
+                    <h6>Related Items</h6>
+                    <h2>We offer the best ingredients for you</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.listRelatedItems)
+            {
+                <partial name="_Item" model="item" />
+            }
+        </div>
+    </div>
+</section>
+<section class="section" id="chefs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 offset-lg-12 text-center">
+                <div class="section-heading">
+                    <h6>Up Sales Items</h6>
+                    <h2>We offer the best ingredients for you</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.listUpsalseItems)
+            {
+                <partial name="_Item" model="item" />
+            }
+        </div>
+    </div>
+</section>

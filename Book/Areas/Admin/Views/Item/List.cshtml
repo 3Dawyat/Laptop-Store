@@ -1,0 +1,48 @@
+﻿@model List<TbItem>
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <a asp-controller="Item" asp-action="Edit" class="btn btn-success">Add New Item</a>
+                </div>
+                <div class="card-body">
+                    <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                        <div class="row"><div class="col-sm-12 col-md-6"></div><div class="col-sm-12 col-md-6"></div></div><div class="row">
+                            <div class="col-sm-12">
+                                <table style="text-align:left;" id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Item Name: activate to sort column descending">Action</th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Item Name: activate to sort column descending">Image</th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Item Name: activate to sort column descending">Reb7</th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Purches Price </th>
+                                            <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Sales Price</th>
+                                            <th class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Item Name: activate to sort column descending">Item Name</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr role="row" class="odd">
+                                                <td>
+                                                    <a asp-action="Delete" asp-route-Item="@item.ItemId" class="btn btn-danger">Delete</a>
+                                                    <a asp-action="Edit" asp-route-Id="@item.ItemId" class="btn btn-info">Edit</a>
+                                                </td>
+                                                <td><a href="@string.Format("/Uplude/{0}",item.ImageName)" target="_blank"><img src="@string.Format("/Uplude/{0}",item.ImageName)" width="80" height="50" /></a></td>
+                                                <td>@(@item.SalesPrice-@item.PurchasePrice)</td>
+                                                <td class="sorting_1">@item.PurchasePrice</td>
+                                                <td>@item.SalesPrice</td>
+                                                <td>@item.ItemName</td>
+                                            </tr>
+                                        }
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

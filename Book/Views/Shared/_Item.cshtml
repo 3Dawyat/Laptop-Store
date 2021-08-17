@@ -1,0 +1,16 @@
+﻿@model TbItem
+<div class="col-lg-4">
+    <div class="chef-item">
+        <div class="thumb">
+            <div class="overlay"></div>
+            <img src="@string.Format("/Uplude/{0}",Model.ImageName)" width="100" height="250" alt="Chef #1">
+        </div>
+        <div class="down-content">
+            <h4>@Model.ItemName</h4>
+            <span>@Decimal.Truncate(Model.SalesPrice) L.E</span><br />
+            <a href="/Items/Details/@Model.ItemId" class="btn btn-info" role="button">Details</a>
+            <a href="" data-name="@Model.ItemName" data-price="@Model.SalesPrice" class="add-to-cart btn btn-info">Add to card </a>
+        </div>
+    </div>
+</div>
+
